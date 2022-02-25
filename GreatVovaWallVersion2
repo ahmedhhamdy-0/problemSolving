@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int wallNumber = scanner.nextInt();
+        Stack<Integer> stack = new Stack();
+        boolean flag = false;
+        int max = 0;
+        for (int i = 0; i < wallNumber; i++) {
+            int wallLength = scanner.nextInt();
+            if (max < wallLength) {
+                max = wallLength;
+            }
+            int temp = 0;
+            if (!stack.empty()) {
+                temp = stack.peek();
+            }
+            if (!stack.empty() && wallLength == temp) {
+                stack.pop();
+                if (stack.peek() < temp) {
+                    flag = true;
+                }
+            } else {
+                stack.push(wallLength);
+            }
+        }
+        if(flag &&!stack.empty()){
+            System.out.println("NO");
+            return;
+        }
+
+        if (stack.size() > 1 || flag ||(stack.size()!=0&&stack.peek()< max)) {
+            System.out.println("NO");
+        } else {
+            System.out.println("YES");
+        }
+    }
+}
