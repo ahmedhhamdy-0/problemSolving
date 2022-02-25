@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int thief = scanner.nextInt();
+        int guard1 = scanner.nextInt();
+        int guard2 = scanner.nextInt();
+        int boxNumber = scanner.nextInt();
+        int []boxes=new int[boxNumber];
+        for(int i=0;i<boxNumber;i++){
+            boxes[i]=scanner.nextInt();
+        }
+        int index=0;
+        Arrays.sort(boxes);
+
+        int counter=0;
+        int temp=index;
+        for(int i=0;i<boxNumber;i++){
+            if(boxes[i]>guard1&&boxes[i]<guard2){
+                counter++;
+
+                }
+            }
+        System.out.println(counter);
+        }
+    }
