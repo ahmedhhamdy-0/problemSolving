@@ -1,0 +1,35 @@
+import  java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    String equ=scanner.nextLine();
+    Scanner input=new Scanner(equ);
+    boolean left=true;
+    int []arr=new int[2];
+    boolean equal=false;
+    int i=0;
+    while(input.hasNext()){
+        String value=input.next();
+        if(value.equals("+")){
+            continue;
+        }else if(value.equals("=")){
+            equal=true;
+        }else if(value.charAt(0)>=65&&value.charAt(0)<=122&&equal==true){
+            left=false;
+        }else if((value.charAt(0)>=65&&value.charAt(0)<=122)&&(equal==false)) {
+            left=true;
+            continue;
+        }else {
+            arr[i]=Integer.parseInt(value);
+            i++;
+        }
+    }
+if(left==true){
+    System.out.println(arr[1]-arr[0]);
+}else{
+    System.out.println(arr[1]+arr[0]);
+}
+
+    }
+}
