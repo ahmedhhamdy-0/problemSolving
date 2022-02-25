@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int counter=0;
+    int questionNumber=scanner.nextInt();
+    for(int i=0;i<questionNumber;i++){
+        int total=0;
+        for(int x=0;x<3;x++){
+            int awnser=scanner.nextInt();
+            total+=awnser;
+        }
+        if(total>=2){
+            counter++;
+
+        }
+    }
+        System.out.println( counter);
+    }
+}
