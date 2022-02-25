@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int personNumber=scanner.nextInt();
+    int fenceLength=scanner.nextInt();
+    int width=0;
+    for(int i=0;i<personNumber;i++){
+        int personlength=scanner.nextInt();
+        if(personlength>fenceLength){
+            width+=2;
+        }else{
+            width+=1;
+        }
+    }
+    System.out.println(width);
+    }
+}
