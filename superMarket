@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int suberMarketNumber=scanner.nextInt();
+    int kilosNumber=scanner.nextInt();
+    int []arr=new int[suberMarketNumber];
+    int []arr2=new int[suberMarketNumber];
+
+    for(int i=0;i<suberMarketNumber;i++){
+        arr[i]=scanner.nextInt();//price
+        arr2[i]=scanner.nextInt();//quantity
+    }
+    double min=(double) arr[0]/(double) arr2[0];
+    for(int i=0;i<suberMarketNumber;i++){
+        if((double)(arr[i]/arr2[i])<min){
+            min=(double)arr[i]/arr2[i];
+        }
+    }
+    System.out.println(min*kilosNumber);
+    }
+}
