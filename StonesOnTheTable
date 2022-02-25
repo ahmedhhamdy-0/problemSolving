@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int stonesNumber=scanner.nextInt();
+    char[] stoneColors=scanner.next().toCharArray();
+    int result=stonesNumber;
+    for(int i=0;i<stonesNumber-1;i++){
+        if(stoneColors[i]==stoneColors[i+1]){
+            result--;
+        }
+    }
+    System.out.println(stonesNumber-result);
+    }
+}
