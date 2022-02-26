@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+	int cityNumber=scanner.nextInt();
+    int position=scanner.nextInt();
+    int []arr=new int[cityNumber+1];
+    int sum=0;
+    for(int i=1;i<=cityNumber;i++)
+    {
+        arr[i]=scanner.nextInt();
+        sum+=arr[i];
+    }
+    for(int i=1;i<position&&i<cityNumber-position;i++){
+        if(arr[position-i]+arr[position+i]==1){sum--;}
+    }
+    System.out.println(sum);
+
+    }
+}
