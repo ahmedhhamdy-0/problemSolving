@@ -1,0 +1,73 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("enter number of processes\n");
+        int numberOfProcesses;
+        Scanner intScanner=new Scanner(System.in);
+        numberOfProcesses=intScanner.nextInt();
+        String process[]=new String[numberOfProcesses];
+        int BurstTime[]=new int[numberOfProcesses];
+        int arrivalTime[]=new int[numberOfProcesses];
+        int priority[]=new int[numberOfProcesses];
+        int quantum[]=new int[numberOfProcesses];
+        int AgatsFactors[]=new int[numberOfProcesses];
+
+        Scanner stringScanner=new Scanner(System.in);
+        for(int i=0;i<numberOfProcesses;i++){
+            System.out.println("Process number"+ (i+1)+"\n");
+            process[i]=stringScanner.nextLine();
+            System.out.println("Burst time \n");
+            BurstTime[i]=intScanner.nextInt();
+            System.out.println("Arrival time \n");
+            arrivalTime[i]=intScanner.nextInt();
+            System.out.println("Priority \n");
+            priority[i]=intScanner.nextInt();
+            System.out.println("Quantum \n");
+            quantum[i]=intScanner.nextInt();
+        }
+        float v1;
+        if(arrivalTime[numberOfProcesses-1]>10){//calculate v1 for last process
+            v1=(float)arrivalTime[numberOfProcesses-1]/10;
+        }
+        else
+            v1=1;
+        int ceil[]=new int[numberOfProcesses];
+        for(int i=0;i<numberOfProcesses;i++){
+            ceil[i]=(int)Math.ceil(arrivalTime[i]/v1);
+            System.out.println(process[i]+" "+ceil[i]);
+        }
+        int temp=max_value(BurstTime,numberOfProcesses);
+        float v2;
+
+        if(temp>10){
+
+            v2=(float)temp/10;
+        }
+        else
+            v2=1;
+        int ceil2[]=new int[numberOfProcesses];
+        for(int i=0;i<numberOfProcesses;i++){
+            ceil2[i]=(int)Math.ceil(BurstTime[i]/v2);
+            System.out.println(process[i]+" "+ceil2[i]);
+        }
+        for (int i=0;i<numberOfProcesses;i++){
+            AgatsFactors[i]=10-priority[i]+ceil[i]+ceil2[i];
+        }
+
+    }
+
+   static int max_value(int a[],int size) {
+     int max=a[0];
+     for(int i=0;i<size;i++){
+         if(max<a[i]){
+             max=a[i];
+         }
+       }
+     return max;
+    }
+}
+
+
