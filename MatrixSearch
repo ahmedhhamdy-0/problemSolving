@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int length =scanner.nextInt();
+    int width=scanner.nextInt();
+    int search=scanner.nextInt();
+    int [][]matrix=new int[length][width];
+    for(int i=0;i<length;i++){
+        for(int j=0;j<width;j++){
+            matrix[i][j]=scanner.nextInt();
+        }
+    }
+    int flag=0;
+        for(int i=0;i<length;i++){
+            for(int j=0;j<width;j++){
+             if(search==matrix[i][j]) {
+                 flag=1;
+                 break;
+             }
+            }
+
+        }
+        if(flag==1){
+            System.out.println("will not take number");
+        }else{
+            System.out.println("will take number");
+        }
+    }
+}
