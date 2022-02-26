@@ -1,0 +1,18 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+
+        Set<Integer>b=new HashSet<>();
+    for(int i=0;i<4;i++){
+      b.add(scanner.nextInt());
+    }
+    int length =b.size();
+    int res=4-length;
+    System.out.println(res);
+    }
+}
