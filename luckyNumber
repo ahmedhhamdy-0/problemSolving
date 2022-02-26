@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	 Scanner scanner=new Scanner(System.in);
+     int first=scanner.nextInt();
+     int Final=scanner.nextInt();
+
+     int value;
+     for(int i=first;i<=Final;i++)
+     {
+         int flag=1;
+         value=i;
+         int temp=i;
+         while (value!=0){
+            /* if(value%10==7||value%10==4)
+             {
+
+                 value=value/10;
+                 flag=1;
+                 while (temp!=0){
+                     if(temp%10 !=7||temp%10!=4)
+                     {
+                         temp=temp/10;
+                         flag=0;
+                         continue;
+                     }else {
+                         temp=temp/10;
+                         flag=1;
+                     }
+                 }
+
+             }else{
+
+                 value=value/10;
+                 flag=0;
+                 continue;
+             }*/
+             if(value%10!=7||value%10!=4){
+                 flag=0;
+                 continue;
+             }else {
+                 value=value/10;
+             }
+
+         }
+         if(flag==1){System.out.println(i);}
+
+     }
+    }
+}
