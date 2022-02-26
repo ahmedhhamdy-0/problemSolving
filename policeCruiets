@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int eventsNumber=scanner.nextInt();
+    int []arr=new int[eventsNumber];
+    int polices=0;
+    int issues=0;
+    for(int i=0;i<eventsNumber;i++){
+        arr[i]=scanner.nextInt();
+    }
+    for(int i=0;i<eventsNumber;i++){
+        if(arr[i]==-1){
+            if(polices==0){
+                issues++;
+            }else{
+                polices--;
+            }
+        }else
+        {
+            polices=polices+arr[i];
+        }
+    }
+    System.out.println(issues);
+    }
+}
