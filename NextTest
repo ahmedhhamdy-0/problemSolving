@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int number=scanner.nextInt();
+    int []questionNumber=new int[number];
+    for(int i=0;i<number;i++){
+        questionNumber[i]=scanner.nextInt();
+    }
+    int max=questionNumber[0];
+        for(int i=0;i<number;i++){
+           if(questionNumber[i]>max){max=questionNumber[i];}
+        }
+        int temp=1;
+        int result=0;
+        int flag=0;
+        while (temp<=max){
+            for(int i=0;i<=questionNumber.length-1;i++){
+                if(temp==questionNumber[i]){
+                    temp++;
+                }else {
+                    result=temp;
+                    flag=1;
+                  break;
+                }
+            }
+            if(flag==1)break;
+
+        }
+        System.out.println(result);
+    }
+}
