@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+	int playerNumber=scanner.nextInt();
+    int minPlayer =scanner.nextInt();
+    int maxPlayer=scanner.nextInt();
+    int totalPlayer=scanner.nextInt();
+    int res1= minPlayer;
+    int res2=maxPlayer;
+    for(int i=0;i<playerNumber-1;i++)
+    {
+        res1=res1+maxPlayer;
+        res2=res2+minPlayer;
+    }
+    if(totalPlayer>res2&&totalPlayer<res1){
+        System.out.println("Yes");
+    }else {
+        System.out.println("No");
+    }
+    }
+}
