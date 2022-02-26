@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    double l1=scanner.nextInt();
+    double l2=scanner.nextInt();
+    double l3=scanner.nextInt();
+    long space=(long)(l1*l1+l2*l2);
+    long space2=(long)(l3*l3);
+    long result=space/ space2;
+    System.out.println(result);
+    }
+}
