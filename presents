@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int friendsNumber=scanner.nextInt();
+    int []arr1=new int[friendsNumber];
+        int []arr2=new int[friendsNumber];
+        for(int i=0;i<friendsNumber;i++){
+            arr1[i]=i+1;
+        }
+        for(int i=0;i<friendsNumber;i++){
+            arr2[i]=scanner.nextInt();
+        }
+        for(int i=0;i<friendsNumber;i++){
+            for(int j=0;j<friendsNumber;j++){
+                if(arr1[i]==arr2[j]){
+                    System.out.print((j+1)+" ");
+                }
+            }
+        }
+    }
+}
