@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	    Scanner scanner =new Scanner(System.in);
+        System.out.println("Please enter numberCan Be Carry in bag");
+        int numberCanBeCarry=scanner.nextInt();
+        System.out.println("Please enter number of kinds");
+        int numberKinds=scanner.nextInt();
+        int number=scanner.nextInt();
+        int volume=scanner.nextInt();
+        int []arr=new int[numberKinds*2];
+        for(int i=1;i<=numberKinds*2;i++)
+        {
+
+        }
+    }
+}
