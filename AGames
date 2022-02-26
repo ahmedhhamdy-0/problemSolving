@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+    int teamNumber=scanner.nextInt();
+    int []arr1=new int[teamNumber];
+        int []arr2=new int[teamNumber];
+        int count=0;
+        for(int i=0;i<teamNumber;i++){
+            arr1[i]=scanner.nextInt();
+            arr2[i]=scanner.nextInt();
+        }
+        for(int j=0;j<teamNumber;j++){
+            for(int i=0;i<teamNumber;i++){
+                if(arr1[j]==arr2[i]){
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+
+    }
+}
